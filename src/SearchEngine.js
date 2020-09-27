@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather";
-import Forecast from "./Forecast"
+import Forecast from "./Forecast";
 export default function SearchEngine(props) {
   let [city, setCity] = useState(props.city);
   let [weather, setWeather] = useState({
@@ -37,10 +37,10 @@ export default function SearchEngine(props) {
       />
       <h3 className="currentTemp">{weather.temperature}</h3>
       <ul className="weatherDetails">
-        <li>humidity:</li>
-        <li>wind:</li>
+        <li>Humidity:{weather.humidity}</li>
+        <li>Wind:{weather.wind}</li>
       </ul>
-      <Forecast />
+      <Forecast forecastCity={city} />
       <form className="Search" onSubmit={showCity}>
         <input type="Search" onChange={changeCity} />
         <input type="submit" value="Search" />
