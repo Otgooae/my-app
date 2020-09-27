@@ -3,11 +3,16 @@ import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather";
 import Forecast from "./Forecast";
 import TempUnit from "./TempUnit";
+import CurrentDate from "./CurrentDate";
+
+
+
 export default function SearchEngine(props) {
   let [city, setCity] = useState(props.city);
   let [weather, setWeather] = useState({
     cityName: props.city,
-    temperature: props.temperature,
+    temperature: props.temp,
+    date: props.date,
   });
   function displayCityTemp(response) {
     console.log(response.data);
@@ -16,6 +21,7 @@ export default function SearchEngine(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      date: response.data.dt * 1000,
     });
   }
   function showCity(event) {
@@ -32,6 +38,9 @@ export default function SearchEngine(props) {
   return (
     <div className="SearchEngine">
       <h1 className="cityName">{weather.cityName}</h1>
+      <h2>
+        <CurrentDate date={weather.date} />
+      </h2>
       <ReactAnimatedWeather
         icon={props.icon}
         color="white"
@@ -42,8 +51,8 @@ export default function SearchEngine(props) {
         <TempUnit temperature={weather.temperature} />
       </h3>
       <ul className="weatherDetails">
-        <li>Humidity:{weather.humidity}</li>
-        <li>Wind:{weather.wind}</li>
+        <li>Humidity: {weather.humidity}%</li>
+        <li>Wind: {weather.wind}km/hr</li>
       </ul>
       <Forecast forecastCity={city} />
       <form className="Search" onSubmit={showCity}>
