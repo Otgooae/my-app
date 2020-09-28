@@ -4,7 +4,7 @@ export default function TempUnit(props) {
   const [temperature, setTemperature] = useState(null);
   function setCelsiusTemp(event) {
     event.preventDefault();
-    setTemperature(props.temperature);
+    setTemperature(Math.round(props.temperature));
   }
   function setFahrenheitTemp(event) {
     event.preventDefault();

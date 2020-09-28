@@ -30,7 +30,7 @@ export default function CurrentDate(props) {
   let currentDate = date.getDate();
   return (
     <div className="CurrentDate">
-      {day},{month} {currentDate}
+      {day}, {month} {currentDate}
     </div>
   );
 }
