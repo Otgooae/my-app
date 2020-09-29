@@ -1,0 +1,23 @@
+.SearchEngine.cityName {
+  font-size: 50px;
+}
+.SearchEngine ul {
+  font-size: 50px;
+}
+form.Search {
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+input.searchBox {
+  font-size: 25px;
+}
+input.button {
+  font-size: 25px;
+  background-color: rgba(224, 79, 212, 0.856);
+}
+
+input {
+  border: 0.5px solid #d3dcea;
+  border-radius: 4px;
+  color: rgb(31, 51, 231);
+}

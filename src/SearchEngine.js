@@ -4,18 +4,24 @@ import ReactAnimatedWeather from "react-animated-weather";
 import Forecast from "./Forecast";
 import TempUnit from "./TempUnit";
 import CurrentDate from "./CurrentDate";
+import DefaultCity from "./DefaultCity";
+
+import "./SearchEngine.css";
 
 export default function SearchEngine(props) {
-  let [city, setCity] = useState(props.city);
+  let [city, setCity] = useState(null);
   let [weather, setWeather] = useState("");
+  let [submitted, setSubmitted] = useState(false);
   function displayCityTemp(response) {
     console.log(response.data);
+    setSubmitted(true);
     setWeather({
       cityName: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       date: response.data.dt * 1000,
+      description: response.data.weather[0].description,
     });
   }
   function showCity(event) {
@@ -31,11 +37,16 @@ export default function SearchEngine(props) {
   }
   let form = (
     <form className="Search" onSubmit={showCity}>
-      <input type="Search" placeholder="Enter a city" onChange={changeCity} />
-      <input type="submit" value="Search" />
+      <input
+        type="Search"
+        placeholder="Enter a city..."
+        className="searchBox"
+        onChange={changeCity}
+      />
+      <input type="submit" value="Search" className="button" />
     </form>
   );
-  if (city) {
+  if (submitted) {
     return (
       <div className="SearchEngine">
         <h1 className="cityName">{weather.cityName}</h1>
@@ -48,6 +59,9 @@ export default function SearchEngine(props) {
           size={150}
           animate={true}
         />
+        <div className="description">
+          <small>{weather.description}</small>
+        </div>
         <h3 className="currentTemp">
           <TempUnit temperature={weather.temperature} />
         </h3>
@@ -55,14 +69,14 @@ export default function SearchEngine(props) {
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/hr</li>
         </ul>
-        <Forecast forecastCity={city} />
+        <Forecast forecastCity={city} index={0} />
         {form}
       </div>
     );
   } else {
     return (
       <div>
-        <h1>We don't have data for {city}....</h1>
+        <DefaultCity city="Ulaanbaatar" />
         {form}
       </div>
     );

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
 import SearchEngine from "./SearchEngine";
 function App() {
@@ -7,7 +6,7 @@ function App() {
     <div className="container">
       <div className="App">
         <header className="App-header">
-          <SearchEngine city="Ulaanbaatar" />
+          <SearchEngine />
         </header>
       </div>
     </div>
