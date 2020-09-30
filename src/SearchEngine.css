@@ -13,11 +13,12 @@ input.searchBox {
 }
 input.button {
   font-size: 25px;
-  background-color: rgba(224, 79, 212, 0.856);
+  background-color: #eac8fa;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 input {
   border: 0.5px solid #d3dcea;
   border-radius: 4px;
-  color: rgb(31, 51, 231);
+  color: rgb(57, 103, 202);
 }

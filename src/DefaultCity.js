@@ -45,7 +45,26 @@ export default function DefaultCity(props) {
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/hr</li>
         </ul>
-        <Forecast forecastCity={props.city} index={0} />
+        <div className="row">
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={0} />
+          </div>
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={1} />
+          </div>
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={2} />
+          </div>
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={3} />
+          </div>
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={4} />
+          </div>
+          <div className="col-2">
+            <Forecast forecastCity={props.city} index={5} />
+          </div>
+        </div>
       </div>
     );
   }
