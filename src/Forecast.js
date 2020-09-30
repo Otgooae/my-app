@@ -23,7 +23,7 @@ export default function (props) {
       <div className="Forecast">
         <div className="hourInterval">
           <div class="col-2">
-            <h3 class="day">hello</h3>
+            <h3 class="day">{props.time}</h3>
             <ReactAnimatedWeather
               icon="RAIN"
               color="white"

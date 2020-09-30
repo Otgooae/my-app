@@ -47,22 +47,22 @@ export default function DefaultCity(props) {
         </ul>
         <div className="row">
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={0} />
+            <Forecast forecastCity={props.city} time="12:00" index={0} />
           </div>
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={1} />
+            <Forecast forecastCity={props.city} time="12:00" index={1} />
           </div>
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={2} />
+            <Forecast forecastCity={props.city} time="12:00" index={2} />
           </div>
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={3} />
+            <Forecast forecastCity={props.city} time="12:00" index={3} />
           </div>
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={4} />
+            <Forecast forecastCity={props.city} time="12:00" index={4} />
           </div>
           <div className="col-2">
-            <Forecast forecastCity={props.city} index={5} />
+            <Forecast forecastCity={props.city} time="12:00" index={5} />
           </div>
         </div>
       </div>
