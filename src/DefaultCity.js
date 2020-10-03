@@ -35,16 +35,21 @@ export default function DefaultCity(props) {
           animate={true}
         />
         <div className="description">
-          <small>{weather.description}</small>
+          <small className="text-capitalize">{weather.description}</small>
         </div>
-        <h3 className="currentTemp">
-          {weather.temperature}
-          <TempUnit temperature={weather.temperature} />
-        </h3>
-        <ul className="weatherDetails">
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/hr</li>
-        </ul>
+        <div className="row">
+          <div className="col-6">
+            <h3 className="currentTemp">
+              <TempUnit temperature={weather.temperature} />
+            </h3>
+          </div>
+          <div className="col-6">
+            <ul className="weatherDetails">
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind}km/hr</li>
+            </ul>
+          </div>
+        </div>
         <div className="row">
           <div className="col-2">
             <Forecast forecastCity={props.city} time="12:00" index={0} />

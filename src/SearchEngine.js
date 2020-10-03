@@ -5,16 +5,15 @@ import Forecast from "./Forecast";
 import TempUnit from "./TempUnit";
 import CurrentDate from "./CurrentDate";
 import DefaultCity from "./DefaultCity";
+import CurrentTime from "./CurrentTime.js";
 
 import "./SearchEngine.css";
 
 export default function SearchEngine(props) {
   let [city, setCity] = useState(null);
-  let [weather, setWeather] = useState("");
-  let [submitted, setSubmitted] = useState(false);
+  let [weather, setWeather] = useState({ submitted: false });
   function displayCityTemp(response) {
     console.log(response.data);
-    setSubmitted(true);
     setWeather({
       cityName: response.data.name,
       temperature: response.data.main.temp,
@@ -22,6 +21,7 @@ export default function SearchEngine(props) {
       humidity: response.data.main.humidity,
       date: response.data.dt * 1000,
       description: response.data.weather[0].description,
+      submitted: true,
     });
   }
   function showCity(event) {
@@ -37,22 +37,32 @@ export default function SearchEngine(props) {
   }
   let form = (
     <form className="Search" onSubmit={showCity}>
-      <input
-        type="Search"
-        placeholder="Enter a city..."
-        className="searchBox"
-        onChange={changeCity}
-      />
-      <input type="submit" value="SEARCH" className="button" />
+      <div className="row">
+        <div className="col-9">
+          <input
+            type="Search"
+            placeholder="Enter a city..."
+            className="searchBox"
+            className="form-control"
+            onChange={changeCity}
+          />
+        </div>
+        <div className="col-3">
+          <input type="submit" value="SEARCH" className="btn btn-primary" />
+        </div>
+      </div>
     </form>
   );
-  if (submitted) {
+  if (weather.submitted) {
     return (
       <div className="SearchEngine">
         <h1 className="cityName">{weather.cityName}</h1>
         <h2>
           <CurrentDate date={weather.date} />
         </h2>
+        <h3>
+          <CurrentTime date={weather.date} />
+        </h3>
         <ReactAnimatedWeather
           icon="CLEAR_DAY"
           color="white"
@@ -60,15 +70,21 @@ export default function SearchEngine(props) {
           animate={true}
         />
         <div className="description">
-          <small>{weather.description}</small>
+          <small className="text-capitalize">{weather.description}</small>
         </div>
-        <h3 className="currentTemp">
-          <TempUnit temperature={weather.temperature} />
-        </h3>
-        <ul className="weatherDetails">
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/hr</li>
-        </ul>
+        <div className="row">
+          <div className="col-6">
+            <h3 className="currentTemp">
+              <TempUnit temperature={weather.temperature} />
+            </h3>
+          </div>
+          <div className="col-6">
+            <ul className="weatherDetails">
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind}km/hr</li>
+            </ul>
+          </div>
+        </div>
         <div className="row">
           <div className="col-2">
             <Forecast forecastCity={city} index={0} />

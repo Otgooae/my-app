@@ -3,19 +3,22 @@ import "./App.css";
 import SearchEngine from "./SearchEngine";
 function App() {
   return (
-    <div className="container">
-      <div className="App">
+    <div className="App">
+      <div className="container">
         <header className="App-header">
           <SearchEngine />
         </header>
-        <div className="gitLink">
+        <footer className="gitLink">
+          Open source{" "}
           <a
             href="https://github.com/Otgooae/my-app.git"
             rel="noopener noreferrer"
+            target="_blank"
           >
-            Open source code by Otgoo Altangerel
+            code
           </a>
-        </div>
+          by Otgoo Altangerel
+        </footer>
       </div>
     </div>
   );
