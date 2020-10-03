@@ -1,18 +1,56 @@
-import React from "react";
+import { useState } from "react";
+import React, { useState } from "react";
 
 export default function TempUnit(props) {
-  return (
-    <div className="TempUnit">
-      <h2>{props.temperature}</h2>
-      <div className="Units">
-        <a href="/" className="celsius" rel="noopener noreferrer">
-          °C
-        </a>{" "}
-        |
-        <a href="/" className="FahrenheitTemp" rel="noopener noreferrer">
-          F
-        </a>
+  const [unit, setUnit] = useState("celsius");
+  function showFahr(event) {
+    event.preventDefault();
+    setUnit("fahrenheit");
+  }
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
+  }
+  function fahrenheit() {
+    (props.temperature * 9) / 5 + 32;
+  }
+  if (unit === `celsius`) {
+    return (
+      <div className="TempUnit">
+        <h2>{Math.round(props.temperature)}</h2>
+        <div className="Units">
+          <span>
+            °C |
+            <a
+              href="/"
+              className="FahrenheitTemp"
+              onClick={showFahr}
+              rel="noopener noreferrer"
+            >
+              F
+            </a>
+          </span>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="TempUnit">
+        <h2>{Math.round(fahrenheit())}</h2>
+        <div className="Units">
+          <span>
+            <a
+              href="/"
+              className="celsius"
+              rel="noopener noreferrer"
+              onClick={showCelsius}
+            >
+              °C
+            </a>{" "}
+            | F{" "}
+          </span>
+        </div>
+      </div>
+    );
+  }
 }

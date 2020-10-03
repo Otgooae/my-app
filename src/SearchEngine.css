@@ -8,11 +8,7 @@ form.Search {
   margin-top: 30px;
   margin-bottom: -30px;
 }
-input.searchBox {
-  font-size: 25px;
-}
 input.btn {
-  font-size: 25px;
   background-color: #eac8fa;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
