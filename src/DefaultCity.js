@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
-import ReactAnimatedWeather from "react-animated-weather";
 import Forecast from "./Forecast";
 import TempUnit from "./TempUnit";
 import CurrentDate from "./CurrentDate";
+import WeatherIcon from "./WeatherIcon";
 import "./DefaultCity.css";
 export default function DefaultCity(props) {
   let weather = props.data;
@@ -13,12 +12,7 @@ export default function DefaultCity(props) {
       <h2>
         <CurrentDate date={weather.date} />
       </h2>
-      <ReactAnimatedWeather
-        icon="CLEAR_DAY"
-        color="white"
-        size={150}
-        animate={true}
-      />
+      <WeatherIcon icon={weather.icon}/>
       <div className="description">
         <small className="text-capitalize">{weather.description}</small>
       </div>
