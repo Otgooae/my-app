@@ -34,9 +34,22 @@ export default function SearchEngine(props) {
   function changeCity(event) {
     setCity(event.target.value);
   }
+  function showCurrentCity(event){
+    event.preventDefault();
+  function showCurrentPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = `c518c03770222f903df8ad86b5e217d8`;
+    let unit = `metric`;
+    let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+    let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+      axios.get(apiUrl).then(displayCityTemp);
+  }
+  navigator.geolocation.getCurrentPosition(showCurrentPosition);
+  }
   let form = (
     <form className="row" onSubmit={showCity}>
-      <div className="col-9">
+      <div className="col-7">
         <input
           type="Search"
           placeholder="Enter a city..."
@@ -48,6 +61,11 @@ export default function SearchEngine(props) {
       <div className="col-3">
         <button type="submit" className="btn btn-dark w-100">
           SEARCH
+        </button>
+      </div>
+      <div className="col-2">
+        <button type="button" className="btn btn-primary w-100" onClick={showCurrentCity}>
+          📍
         </button>
       </div>
     </form>
