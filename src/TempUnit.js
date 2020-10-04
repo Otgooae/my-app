@@ -35,7 +35,7 @@ export default function TempUnit(props) {
   } else {
     return (
       <div className="TempUnit">
-        <h2>{Math.round(fahrenheit())}</h2>
+        <span className="Temp">{Math.round(fahrenheit())}</span>
         <div className="Units">
           <span>
             <a
