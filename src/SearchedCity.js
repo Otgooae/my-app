@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TempUnit from "./TempUnit";
 import CurrentDate from "./CurrentDate";
 import CurrentTime from "./CurrentTime";
