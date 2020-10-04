@@ -2,7 +2,7 @@
   font-size: 55px;
   margin-top: 20px;
   margin-bottom: 5px;
-  font-family:'Arial Narrow Bold', sans-serif;
+  font-family: "Arial Narrow Bold", sans-serif;
 }
 .SearchEngine h2 {
   font-size: 20px;
@@ -14,7 +14,8 @@
 }
 
 .SearchEngine canvas {
-  margin-bottom: 10px;
+  margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 .SearchEngine.col-9 {
