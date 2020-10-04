@@ -27,7 +27,7 @@ export default function SearchedCity(props) {
               </h3>
             </div>
           </div>
-          <div className="float-left">
+          <div className="float-center">
             <div className="col-6">
               <ul className="weatherDetails">
                 <li>Humidity: {weather.humidity}%</li>
