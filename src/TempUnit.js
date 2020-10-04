@@ -26,7 +26,7 @@ export default function TempUnit(props) {
               onClick={showFahr}
               rel="noopener noreferrer"
             >
-              F
+              °F
             </a>
           </span>
         </div>
@@ -46,7 +46,7 @@ export default function TempUnit(props) {
             >
               °C
             </a>{" "}
-            | F{" "}
+            | °F{" "}
           </span>
         </div>
       </div>
