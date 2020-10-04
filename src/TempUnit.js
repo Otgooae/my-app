@@ -19,6 +19,7 @@ export default function TempUnit(props) {
         <span className="Temp">{Math.round(props.temperature)}</span>
         <div className="Units">
           <span>
+            {" "}
             °C |{" "}
             <a
               href="/"
