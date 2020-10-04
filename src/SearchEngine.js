@@ -34,18 +34,18 @@ export default function SearchEngine(props) {
   function changeCity(event) {
     setCity(event.target.value);
   }
-  function showCurrentCity(event){
+  function showCurrentCity(event) {
     event.preventDefault();
-  function showCurrentPosition(position) {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let apiKey = `c518c03770222f903df8ad86b5e217d8`;
-    let unit = `metric`;
-    let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
-    let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+    function showCurrentPosition(position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      let apiKey = `c518c03770222f903df8ad86b5e217d8`;
+      let unit = `metric`;
+      let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+      let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
       axios.get(apiUrl).then(displayCityTemp);
-  }
-  navigator.geolocation.getCurrentPosition(showCurrentPosition);
+    }
+    navigator.geolocation.getCurrentPosition(showCurrentPosition);
   }
   let form = (
     <form className="row" onSubmit={showCity}>
@@ -69,7 +69,9 @@ export default function SearchEngine(props) {
           className="btn btn-primary w-100"
           onClick={showCurrentCity}
         >
-          <span role="img">📍</span>
+          <span role="img" aria-label="Emoji">
+            📍
+          </span>
         </button>
       </div>
     </form>
