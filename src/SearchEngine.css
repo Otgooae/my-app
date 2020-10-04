@@ -1,20 +1,31 @@
-.SearchEngine.cityName {
-  font-size: 50px;
+.SearchEngine h1 {
+  font-size: 45px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
-.SearchEngine ul {
-  font-size: 50px;
-}
-form.Search {
-  margin-top: 30px;
-  margin-bottom: -30px;
-}
-input.btn {
-  background-color: #eac8fa;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+.SearchEngine h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-input {
-  border: 0.5px solid #d3dcea;
-  border-radius: 4px;
-  color: rgb(57, 103, 202);
+.SearchEngine ul {
+  font-size: 13px;
+}
+
+.SearchEngine canvas {
+  margin-bottom: 15px;
+}
+
+.SearchEngine.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.SearchEngine form.row {
+  margin: 10px 30px 25px;
+}
+button.btn-dark {
+  color: #fff;
+  background-color: #163088ca;
+  border-color: #5c6064;
 }

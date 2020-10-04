@@ -12,7 +12,7 @@ export default function CurrentTime(props) {
   }
   return (
     <div className="Time">
-      `${hours}:${minutes}`
+      {hours}:{minutes}
     </div>
   );
 }

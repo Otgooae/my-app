@@ -9,14 +9,14 @@ function App() {
           <SearchEngine defaultCity="Ulaanbaatar" />
         </header>
         <footer className="gitLink">
-          Open source{" "}
+          Open-source{" "}
           <a
             href="https://github.com/Otgooae/my-app.git"
             rel="noopener noreferrer"
             target="_blank"
           >
             code
-          </a>
+          </a>{" "}
           by Otgoo Altangerel
         </footer>
       </div>

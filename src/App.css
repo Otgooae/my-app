@@ -1,19 +1,26 @@
 .App {
   text-align: center;
+  max-width: 600px;
 }
 .App-header {
-  background-image: linear-gradient(150deg, #bcc9e6 0%, #f578dc 100%);
-  min-height: 90vh;
-  display: flex;
+  background: #f8bcec;
+  margin: 20px auto 10px;
+  border: 1px solid rgb(224, 228, 231);
+  border-radius: 13px;
+  color: #163088ca;
+  font-family: cursive;
   align-items: center;
   justify-content: center;
-  margin: 30px;
-  border: 1px solid rgb(216, 228, 236);
-  border-radius: 15px;
-  color: #2656f5ca;
-  font-family: cursive;
 }
-
+div.App {
+  display: block;
+  margin: 0 auto;
+}
 .container {
-  max-width: 800px;
+  display: block;
+}
+.App footer {
+  font-family: monospace;
+  font-size: 13px;
+  margin: 0 auto;
 }

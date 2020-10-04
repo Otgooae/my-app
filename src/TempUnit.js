@@ -1,6 +1,5 @@
-import { useState } from "react";
 import React, { useState } from "react";
-
+import "./TempUnit.css";
 export default function TempUnit(props) {
   const [unit, setUnit] = useState("celsius");
   function showFahr(event) {
@@ -12,12 +11,12 @@ export default function TempUnit(props) {
     setUnit("celsius");
   }
   function fahrenheit() {
-    (props.temperature * 9) / 5 + 32;
+    return (props.temperature * 9) / 5 + 32;
   }
   if (unit === `celsius`) {
     return (
       <div className="TempUnit">
-        <h2>{Math.round(props.temperature)}</h2>
+        <span className="Temp">{Math.round(props.temperature)}</span>
         <div className="Units">
           <span>
             °C |

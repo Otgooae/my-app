@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import DefaultCity from "./DefaultCity";
+import SearchedCity from "./SearchedCity";
+import WeatherForecast from "./WeatherForecast";
 import "./SearchEngine.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 export default function SearchEngine(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState({ submitted: false });
@@ -34,27 +35,29 @@ export default function SearchEngine(props) {
     setCity(event.target.value);
   }
   let form = (
-    <form className="Search" onSubmit={showCity}>
-      <div className="row">
-        <div className="col-9">
-          <input
-            type="Search"
-            placeholder="Enter a city..."
-            className="searchBox"
-            className="form-control"
-            onChange={changeCity}
-          />
-        </div>
-        <div className="col-3">
-          <input type="submit" value="SEARCH" className="btn btn-primary" />
-        </div>
+    <form className="row" onSubmit={showCity}>
+      <div className="col-9">
+        <input
+          type="Search"
+          placeholder="Enter a city..."
+          className="searchBox"
+          className="form-control"
+          onChange={changeCity}
+          autoFocus="on"
+        />
+      </div>
+      <div className="col-3">
+        <button type="submit" className="btn btn-dark w-100">
+          SEARCH
+        </button>
       </div>
     </form>
   );
   if (weather.submitted) {
     return (
-      <div>
-        <DefaultCity data={weather} />
+      <div className="SearchEngine">
+        <SearchedCity data={weather} />
+        <WeatherForecast city={weather.cityName} />
         {form}
       </div>
     );

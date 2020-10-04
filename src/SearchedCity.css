@@ -1,0 +1,16 @@
+.SearchedCity ul {
+  font-size: 20px;
+  list-style: none;
+  position: relative;
+  top:20px;
+  left:-40px;
+}
+
+div.col-6 {
+  flex: 0 0 55%;
+  max-width: 100%;
+}
+
+div.row {
+  padding: 0 25px;
+}
