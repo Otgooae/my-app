@@ -9,6 +9,7 @@ export default function SearchedCity(props) {
   return (
     <div className="SearchedCity">
       <h1 className="cityName">{weather.cityName}</h1>
+      <small>Last updated on</small>
       <h2>
         <CurrentDate date={weather.date} />
         <CurrentTime date={weather.date} />
