@@ -40,7 +40,6 @@ export default function SearchEngine(props) {
         <input
           type="Search"
           placeholder="Enter a city..."
-          className="searchBox"
           className="form-control"
           onChange={changeCity}
           autoFocus="on"
