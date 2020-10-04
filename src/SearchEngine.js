@@ -64,8 +64,12 @@ export default function SearchEngine(props) {
         </button>
       </div>
       <div className="col-2">
-        <button type="button" className="btn btn-primary w-100" onClick={showCurrentCity}>
-          📍
+        <button
+          type="button"
+          className="btn btn-primary w-100"
+          onClick={showCurrentCity}
+        >
+          <span role="img">📍</span>
         </button>
       </div>
     </form>
